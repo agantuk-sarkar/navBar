@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Nav bar section -->
+    <div
+      class="navBar-container border border-transparent h-[10vh] mx-5 px-5 mt-[1rem] shadow-md fixed top-[1rem]"
+    >
+      <div
+        class="second-container border-transparent h-[5vh] w-[30rem] mt-[1rem] ml-[42rem] flex justify-around font-semibold"
+      >
+        <div>
+          <a href="./home.html">Home</a>
+        </div>
+        <div>
+          <a href="./login.html">Login</a>
+        </div>
+        <div>
+          <a href="./signup.html">SignUp</a>
+        </div>
+      </div>
+    </div>
+    <!-- Login form section -->
+    <div
+      class="form-container border-transparent bg-cyan-500 h-[27vh] w-[25rem] mt-[10rem] mx-auto p-[2.3%] shadow-md bg-yellow-50"
+    >
+      <form class="login-submit-form">
+        <div class="email-labe mb-[1rem]">
+          <label for="email">Email ID</label>
+          <input
+            class="border-2"
+            type="email"
+            id="loginEmail"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <div class="password-label mb-[1rem]">
+          <label for="password">Password</label>
+          <input
+            class="border-2"
+            type="Password"
+            id="loginPassword"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+        <input
+          class="border h-[2rem] w-[5rem] ml-[7rem] bg-green-500 text-white cursor-pointer"
+          type="submit"
+          value="Login"
+        />
+      </form>
+    </div>
+  </body>
+</html>
+<script src="../scripts/login.js"></script>
