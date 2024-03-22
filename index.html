@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Navbar</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
@@ -25,5 +26,23 @@
         </div>
       </div>
     </div>
+    <!-- carousel images -->
+    <div
+      class="carousel-container border-transparent h-[50vh] w-[40rem] mt-[10rem] mx-auto relative shadow-md"
+    >
+      <div class="carousel-imageContainer w-full h-full"></div>
+      <!-- left and right arrow button -->
+      <span
+        class="left-arrow absolute top-[8rem] left-[1rem] text-2xl cursor-pointer z-50 text-white"
+      >
+        <i class="lni lni-angle-double-left"></i>
+      </span>
+      <span
+        class="right-arrow absolute top-[8rem] right-[1rem] text-2xl cursor-pointer z-50 text-white"
+      >
+        <i class="lni lni-angle-double-right"></i>
+      </span>
+    </div>
   </body>
 </html>
+<script src="./index.js"></script>
