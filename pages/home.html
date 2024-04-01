@@ -10,7 +10,7 @@
   <body>
     <!-- Nav bar section -->
     <div
-      class="navBar-container border border-transparent bg-cyan-500 h-[10vh] mx-5 px-5 mt-[1rem] shadow-md fixed top-[1rem]"
+      class="navBar-container border border-transparent bg-cyan-500 h-[10vh] mx-5 px-5 mt-[1rem] shadow-md fixed top-[1rem] z-[99999]"
     >
       <div
         class="second-container border-transparent h-[5vh] w-[30rem] mt-[1rem] ml-[42rem] flex justify-around font-semibold"
@@ -28,7 +28,7 @@
     </div>
     <!-- carousel images -->
     <div
-      class="carousel-container border-transparent h-[50vh] w-[40rem] mt-[10rem] mx-auto relative shadow-md"
+      class="carousel-container border-transparent h-[50vh] w-[70rem] mt-[10rem] mx-auto relative shadow-md fixed top-[2rem]"
     >
       <div class="carousel-imageContainer w-full h-full"></div>
       <!-- left and right arrow button -->
@@ -43,6 +43,10 @@
         <i class="lni lni-angle-double-right"></i>
       </span>
     </div>
+    <!-- movies section -->
+    <div
+      class="movie-container border border-red-600 min-h-[70vh] w-[50rem] mx-auto mt-[3rem] mx-5 px-5 grid grid-rows-3 grid-cols-3 gap-[1rem] sticky top-[100rem]"
+    ></div>
   </body>
 </html>
 <script src="../scripts/home.js"></script>

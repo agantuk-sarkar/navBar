@@ -1,9 +1,9 @@
 // storing images into an array
 const image_array = [
-  "https://images.pexels.com/photos/13881720/pexels-photo-13881720.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-  "https://images.pexels.com/photos/20044483/pexels-photo-20044483/free-photo-of-a-woman-laying-on-a-bed-in-a-pink-pajama.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-  "https://images.pexels.com/photos/18262756/pexels-photo-18262756/free-photo-of-smiling-woman-carrying-basket-on-back-with-flowers.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-  "https://images.pexels.com/photos/20025771/pexels-photo-20025771/free-photo-of-people-and-pattern-story.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+  "https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_2_5x/sources/r1/cms/prod/4469/674469-h",
+  "https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_2_5x/sources/r1/cms/prod/6362/936362-h",
+  "https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_2_5x/sources/r1/cms/prod/244/1530244-h-c05c58fd405f",
+  "https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_2_5x/sources/r1/cms/prod/9198/1710254439198-h",
 ];
 
 // getting all html elements into js
@@ -65,3 +65,19 @@ function carouselImages(index) {
   }, 2000);
 }
 carouselImages(currentIndex);
+
+let movieContainer = document.querySelector(".movie-container");
+
+function display(array) {
+  movieContainer.innerHTML = "";
+
+  array.forEach(function (ele) {
+    let div = document.createElement("div");
+    div.setAttribute("class", "border border-blue-500");
+    div.classList.add("h-60");
+    div.classList.add("w-60");
+
+    movieContainer.append(div);
+  });
+}
+display(image_array);
