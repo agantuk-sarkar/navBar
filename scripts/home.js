@@ -66,18 +66,33 @@ function carouselImages(index) {
 }
 carouselImages(currentIndex);
 
-let movieContainer = document.querySelector(".movie-container");
+const movieContainer = document.querySelector(".movie-container");
 
-function display(array) {
+// using the same movie array by getting from localStorage
+const movie_shows = JSON.parse(localStorage.getItem("movieShows"));
+console.log(movie_shows);
+
+function display(movieArray) {
   movieContainer.innerHTML = "";
 
-  array.forEach(function (ele) {
-    let div = document.createElement("div");
-    div.setAttribute("class", "border border-blue-500");
-    div.classList.add("h-60");
-    div.classList.add("w-60");
+  movieArray.forEach(function (ele, ind) {
+    let mainDiv = document.createElement("div");
+    mainDiv.setAttribute("class", "border border-blue-500");
+    mainDiv.classList.add("h-60");
+    mainDiv.classList.add("w-60");
 
-    movieContainer.append(div);
+    let imageDiv = document.createElement("div");
+    imageDiv.setAttribute("class", "border border-orange-700");
+    imageDiv.classList.add("h-40");
+
+    let imgTag = document.createElement("img");
+    imgTag.src = ele.image;
+    imgTag.setAttribute("class", "w-full h-full");
+
+    imageDiv.append(imgTag);
+
+    mainDiv.append(imageDiv);
+    movieContainer.append(mainDiv);
   });
 }
-display(image_array);
+display(movie_shows);
