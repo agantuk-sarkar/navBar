@@ -70,28 +70,86 @@ const movieContainer = document.querySelector(".movie-container");
 
 // using the same movie array by getting from localStorage
 const movie_shows = JSON.parse(localStorage.getItem("movieShows"));
-console.log(movie_shows);
+// console.log(movie_shows);
 
 function display(movieArray) {
   movieContainer.innerHTML = "";
 
   movieArray.forEach(function (ele, ind) {
+    // movie container which holds both movie images and content
     let mainDiv = document.createElement("div");
-    mainDiv.setAttribute("class", "border border-blue-500");
-    mainDiv.classList.add("h-60");
+    mainDiv.setAttribute(
+      "class",
+      "border border-blue-500 hover:shadow-xl cursor-pointer flex flex-col justify-between"
+    );
+    mainDiv.classList.add("h-80");
     mainDiv.classList.add("w-60");
 
+    // movie images
     let imageDiv = document.createElement("div");
-    imageDiv.setAttribute("class", "border border-orange-700");
-    imageDiv.classList.add("h-40");
+    imageDiv.setAttribute("class", "border border-orange-700 rounded-lg");
+    imageDiv.classList.add("h-60");
 
     let imgTag = document.createElement("img");
     imgTag.src = ele.image;
     imgTag.setAttribute("class", "w-full h-full");
 
+    // Movie content like name, release dat and rating
+    let contentDiv = document.createElement("div");
+    contentDiv.setAttribute("class", "border border-blue-700 relative px-2");
+    contentDiv.classList.add("h-20");
+
+    // name of the movie
+    let pTag_movie_name = document.createElement("p");
+    pTag_movie_name.textContent = ele.name;
+    pTag_movie_name.setAttribute(
+      "class",
+      "font-bold italic text-fuchsia-600 text-lg"
+    );
+
+    // release date
+    let span_release_date_text = document.createElement("span");
+    span_release_date_text.textContent = "RELEASE DATE: ";
+    span_release_date_text.setAttribute(
+      "class",
+      "text-sm italic text-fuchsia-600"
+    );
+
+    let span_release_date = document.createElement("span");
+    span_release_date.textContent = ele.releaseDate;
+    span_release_date.setAttribute("class", "text-sm text-emerald-600");
+
+    // IMDB rating
+    let imdb_rating = document.createElement("span");
+    imdb_rating.setAttribute(
+      "class",
+      "italic text-sm text-fuchsia-600 font-semibold flex justify-start"
+    );
+    imdb_rating.textContent = "IMDB: ";
+
+    let imdb_rating_text = document.createElement("span");
+    imdb_rating_text.setAttribute(
+      "class",
+      "text-lg text-emerald-600 absolute top-[3rem] left-[3.2rem]"
+    );
+    imdb_rating_text.textContent = ele.rating;
+
+    // appending names, relaese date and rating into content container
+    contentDiv.append(
+      pTag_movie_name,
+      span_release_date_text,
+      span_release_date,
+      imdb_rating,
+      imdb_rating_text
+    );
+
+    // appending image into image container
     imageDiv.append(imgTag);
 
-    mainDiv.append(imageDiv);
+    // appending image and content container into movie container
+    mainDiv.append(imageDiv, contentDiv);
+
+    // appending movie container into main container
     movieContainer.append(mainDiv);
   });
 }
