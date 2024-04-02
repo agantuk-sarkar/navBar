@@ -130,7 +130,7 @@ function display(movieArray) {
     let imdb_rating_text = document.createElement("span");
     imdb_rating_text.setAttribute(
       "class",
-      "text-lg text-emerald-600 absolute top-[3rem] left-[3.2rem]"
+      "text-base text-emerald-600 absolute top-[3.15rem] left-[3.2rem]"
     );
     imdb_rating_text.textContent = ele.rating;
 
