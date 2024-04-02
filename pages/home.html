@@ -7,7 +7,7 @@
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      *{
+      * {
         box-sizing: border-box;
       }
     </style>
@@ -48,9 +48,22 @@
         <i class="lni lni-angle-double-right"></i>
       </span>
     </div>
+    <!-- sorting by low to high and high to low -->
+    <div
+      class="sorting-container border-transparent h-[7vh] w-full mt-[5rem] flex justify-end"
+    >
+      <select
+        class="border w-[12rem] bg-orange-300 rounded-md cursor-pointer px-2"
+        id="sortByRating"
+      >
+        <option hidden>Sort by : IMDB Rating</option>
+        <option value="low">Low to high</option>
+        <option value="high">High to low</option>
+      </select>
+    </div>
     <!-- movies section -->
     <div
-      class="movie-container border border-red-600 min-h-[70vh] w-[50rem] mx-auto mt-[3rem] mx-5 px-5 grid grid-rows-3 grid-cols-3 gap-[1rem] sticky top-[100rem]"
+      class="movie-container border-transparent min-h-[70vh] w-[50rem] mx-auto mt-[3rem] mx-5 px-5 grid grid-rows-3 grid-cols-3 gap-[1rem] sticky top-[100rem]"
     ></div>
   </body>
 </html>

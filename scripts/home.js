@@ -80,23 +80,26 @@ function display(movieArray) {
     let mainDiv = document.createElement("div");
     mainDiv.setAttribute(
       "class",
-      "border border-blue-500 hover:shadow-xl cursor-pointer flex flex-col justify-between"
+      "border-transparent hover:shadow-xl rounded-lg cursor-pointer flex flex-col justify-between"
     );
     mainDiv.classList.add("h-80");
     mainDiv.classList.add("w-60");
 
     // movie images
     let imageDiv = document.createElement("div");
-    imageDiv.setAttribute("class", "border border-orange-700 rounded-lg");
+    imageDiv.setAttribute("class", "border-transparent rounded-lg");
     imageDiv.classList.add("h-60");
 
     let imgTag = document.createElement("img");
     imgTag.src = ele.image;
-    imgTag.setAttribute("class", "w-full h-full");
+    imgTag.setAttribute("class", "w-full h-full rounded-lg");
 
     // Movie content like name, release dat and rating
     let contentDiv = document.createElement("div");
-    contentDiv.setAttribute("class", "border border-blue-700 relative px-2");
+    contentDiv.setAttribute(
+      "class",
+      "border-transparent bg-slate-100 relative px-2 rounded-lg"
+    );
     contentDiv.classList.add("h-20");
 
     // name of the movie
@@ -154,3 +157,20 @@ function display(movieArray) {
   });
 }
 display(movie_shows);
+
+// sorting the array by IMDB rating and showing in UI
+let sort_by_rating = document.getElementById("sortByRating");
+
+sort_by_rating.addEventListener("change", function () {
+  if (sort_by_rating.value === "low") {
+    movie_shows.sort(function (a, b) {
+      return +a.rating - +b.rating;
+    });
+    display(movie_shows);
+  } else if (sort_by_rating.value === "high") {
+    movie_shows.sort(function (a, b) {
+      return +b.rating - +a.rating;
+    });
+    display(movie_shows);
+  }
+});
