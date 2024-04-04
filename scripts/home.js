@@ -45,7 +45,7 @@ function carouselImages(index) {
 
   const imgTag = document.createElement("img");
   imgTag.src = image_array[index];
-  imgTag.setAttribute("class", "w-full h-full");
+  imgTag.setAttribute("class", "w-full h-full rounded-lg");
   carousel_imageContainer.append(imgTag);
   carousel_container.append(carousel_imageContainer);
 
@@ -58,7 +58,7 @@ function carouselImages(index) {
       currentIndex = 0;
     }
     imageTag.src = image_array[currentIndex];
-    imageTag.setAttribute("class", "w-full h-full");
+    imageTag.setAttribute("class", "w-full h-full rounded-lg");
     carousel_imageContainer.append(imageTag);
     carousel_container.append(carousel_imageContainer);
     currentIndex++;
