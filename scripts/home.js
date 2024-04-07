@@ -162,6 +162,7 @@ display(movie_shows);
 let sort_by_rating = document.getElementById("sortByRating");
 
 sort_by_rating.addEventListener("change", function () {
+  
   if (sort_by_rating.value === "low") {
     movie_shows.sort(function (a, b) {
       return +a.rating - +b.rating;
